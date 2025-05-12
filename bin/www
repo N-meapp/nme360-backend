@@ -13,8 +13,11 @@ function normalizePort(val) {
   return false;
 }
 
-const port = normalizePort('3000');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+
+// Debug log to check the port
+console.log(`Attempting to start server on port ${port}`);
 
 // Create server
 const server = http.createServer(app);
