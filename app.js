@@ -20,10 +20,9 @@ const app = express();
 
 const mongoURI = process.env.VITE_MONGO_URL;
 
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+console.log(mongoURI,'mongoooo');
+
+mongoose.connect(mongoURI)
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error('MongoDB connection error:', err));
 
