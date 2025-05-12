@@ -9,6 +9,8 @@ import adminRouter from './routes/admin.js'; // add `.js` in ESM
 
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // __dirname workaround for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -16,7 +18,7 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
-const mongoURI = 'mongodb+srv://developersnme:uHeMz3emX3O7kn4d@cluster0.ywhcgx9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const mongoURI = process.env.VITE_MONGOURL;
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
