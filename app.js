@@ -18,7 +18,8 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
-const mongoURI = process.env.VITE_MONGOURL;
+const mongoURI = process.env.VITE_MONGO_URL;
+
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
